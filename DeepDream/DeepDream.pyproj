@@ -2717,7 +2717,7 @@
     <Compile Include="DreamFrames.py" />
     <Compile Include="DreamImage.py" />
     <Compile Include="inception5h.py" />
-    <Compile Include="MindChange.py" />
+    <Compile Include="BlendDreams.py" />
     <Compile Include="DeepDream.py" />
   </ItemGroup>
   <ItemGroup>

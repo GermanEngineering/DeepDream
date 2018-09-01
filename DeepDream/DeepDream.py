@@ -16,44 +16,48 @@ Layer 10: 40 iterations and 25 repeats is good.
 
 import DreamImage
 import DreamFrames
-import MindChange
+import BlendDreams
 import CreateVideo
 
-# general
-fileDirectory = "Application/Dreams/"
+# general settings
+dreamDirectory = "Application/Dreams/"
 layers = [6, 10, 3]
-iterations = 1  # how clear is the dream vs original image
+iterations = 1
 stepSize = 1
 rescaleFactor = 0.6
-repeats = 5 # How many "passes" over the data. More passes, the more granular the gradients will be.
+repeats = 5
 blend = 0.2
-# images
+
+### Create a dream image.
+# Settings
 pictureName = "IMG-20170212-WA0010.jpg"
-outputDirectory = "Application/PicturesOutput/"
-# video
+pictureInputDirectory = "Application/PicturesInput/"
+pictureOutputDirectory = "Application/PicturesOutput/"
+
+#DreamImage.DreamImage(pictureInputDirectory, layers, iterations, stepSize, rescaleFactor, 
+#                      repeats, blend, pictureName, pictureOutputDirectory)
+
+
+### Create a dream video.
+# Settings
 fps = 20
-# frames
-dreamName = "Snowman1280x720"
+dreamImage1 = "Baumstaemme1920x1080"
+dreamImage2 = "GreenTree1920x1080"
 changeLayerAfterSec = 1
 dreamLength = len(layers) * changeLayerAfterSec
 trimPercent = 0.3
-# mind change
-mindChangeName = "MindChangeTest"
-mindChangeLength = 2
-# create video
+blendDirectory = "Application/Blend/"
+blendLength = 2
+videoOutputDirectory = "Application/Videos/"
 picturesFolder = ""
 
-"""
-DreamFrames.DreamFrames("Application/Dreams/", layers, iterations, stepSize, rescaleFactor, repeats, blend
-                        , fps, "Baumstaemme1920x1080", dreamLength, changeLayerAfterSec, trimPercent)
-
-DreamFrames.DreamFrames("Application/Dreams/", layers, iterations, stepSize, rescaleFactor, repeats, blend
-                        , fps, "GreenTree1920x1080", dreamLength, changeLayerAfterSec, trimPercent)
-
-MindChange.MindChange("Application/MindChange/", fps, dreamLength, "Baumstaemme1920x1080", "GreenTree1920x1080"
-                      , "Application/Dreams/", mindChangeLength, trimPercent)
-"""
-CreateVideo.CreateVideo("Application/Videos/", fps, "Snowman1280x720", "IR1280x720"
-                        , "Application/Dreams/", "Application/MindChange/")
+#DreamFrames.DreamFrames(dreamDirectory, layers, iterations, stepSize, rescaleFactor, repeats, 
+#                        blend, fps, dreamImage1, dreamLength, changeLayerAfterSec, trimPercent)
+#DreamFrames.DreamFrames(dreamDirectory, layers, iterations, stepSize, rescaleFactor, repeats, 
+#                        blend, fps, dreamImage2, dreamLength, changeLayerAfterSec, trimPercent)
+BlendDreams.BlendDreams(blendDirectory, fps, dreamLength, dreamImage1, dreamImage2, 
+                      dreamDirectory, blendLength, trimPercent)
+#CreateVideo.CreateVideo(videoOutputDirectory, fps, dreamImage1, dreamImage2, 
+#                        dreamDirectory, blendDirectory)
 
 print("=)")
