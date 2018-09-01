@@ -2,8 +2,10 @@ import cv2
 import os
 from deepdreamer import load_image
 
-
 def CreateVideo(fileDirectory, fps, nameDream1, nameDream2, dreamsDirectory, blendDirectory):
+    """
+    Takes the images from two dreams as well as the blend images from them to create a video.
+    """
 
     # Get first image.
     imageOne = load_image(filename="{}{}/img_{}.jpg".format(dreamsDirectory, nameDream1, 0))

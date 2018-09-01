@@ -2,9 +2,11 @@ from deepdreamer import model, load_image, recursive_optimize
 import numpy as np
 import PIL.Image
 
-
 def DreamImage(fileDirectory, layers, iterations, stepSize, rescaleFactor, 
                repeats, blend, pictureName, outputDirectory):
+    """
+    Amplyfies the patterns the inception model sees in one image.
+    """
 
     # Load the input image.
     filePath = fileDirectory + pictureName

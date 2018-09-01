@@ -7,24 +7,10 @@ import numpy
 import random
 import math
 
-
-def DreamFrames(fileDirectory, layers, iterations, stepSize, rescaleFactor, repeats, blend
+def DreamFrames(dreamDirectory, layers, iterations, stepSize, rescaleFactor, repeats, blend
                 , fps, dreamName, dreamLength, changeLayerAfterSec, trimPercent):
-    """Creates and saves the frames (images) for a dream video.
-
-    Arguments:
-        string fileDirectory - Relative path to the input file folder.
-        List<int> layers - List of layers the dream should loop through.
-        int iterations - Number of optimization iterations.
-        double (/float?) stepSize - Scale for each step of gradient descent.
-        double rescaleFactor - Downscaling factor for the image.
-        int repeats - Number of image downscales.
-        double blend - Factor for blending the original and processed images.
-        int fps - Frames per second of the video [images/s].
-        string dreamName - Folder name for the dream images.
-        int dreamLength - Duration of the dream [s].
-        int changeLayerAfterSec - Time befor switching to the next layer [s].
-        double trimPercent - Factor to trim the image [%].
+    """
+    Creates and saves the frames (images) for a dream video.
     """
 
     # Randomly chose initial values for RGB correction.
@@ -34,9 +20,9 @@ def DreamFrames(fileDirectory, layers, iterations, stepSize, rescaleFactor, repe
 
     for i in range(0, dreamLength * fps):
         # Check if the image has already been processed.
-        if not os.path.isfile("{}{}/img_{}.jpg".format(fileDirectory, dreamName, i + 1)):
+        if not os.path.isfile("{}{}/img_{}.jpg".format(dreamDirectory, dreamName, i + 1)):
             # Load the input/previous image.
-            img_result = load_image(filename="{}{}/img_{}.jpg".format(fileDirectory, dreamName, i))
+            img_result = load_image(filename="{}{}/img_{}.jpg".format(dreamDirectory, dreamName, i))
 
             # Get the size of the image.
             xSize = len(img_result[0])
@@ -96,7 +82,7 @@ def DreamFrames(fileDirectory, layers, iterations, stepSize, rescaleFactor, repe
             img_result = np.clip(img_result, 0.0, 255.0)
             img_result = img_result.astype(np.uint8)
             result = PIL.Image.fromarray(img_result, mode="RGB")
-            print("{}{}/img_{}.jpg".format(fileDirectory, dreamName, i + 1))
-            result.save("{}{}/img_{}.jpg".format(fileDirectory, dreamName, i + 1))
+            print("{}{}/img_{}.jpg".format(dreamDirectory, dreamName, i + 1))
+            result.save("{}{}/img_{}.jpg".format(dreamDirectory, dreamName, i + 1))
         else:
             print("Already processed image {}".format(i))

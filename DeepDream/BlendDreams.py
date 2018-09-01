@@ -6,9 +6,11 @@ from scipy.misc import imresize
 from deepdreamer import load_image
 import numpy
 
-
 def BlendDreams(blendDirectory, fps, dreamLength, nameDream1, nameDream2, 
                dreamsDirectory, blendLength, trimPercent):
+    """
+    Takes the images from two dreems and creates a blend transition.
+    """
 
     # Create new folder for the blend images.
     blendName = "{}{}_TO_{}".format(blendDirectory, nameDream1, nameDream2)

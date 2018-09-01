@@ -20,36 +20,36 @@ import BlendDreams
 import CreateVideo
 
 # general settings
-dreamDirectory = "Application/Dreams/"
-layers = [6, 10, 3]
-iterations = 1
-stepSize = 0.5
-rescaleFactor = 0.6
-repeats = 5
-blend = 0.2
+dreamDirectory = "Application/Dreams/"  # string - Relative path to the input file folder.
+layers = [6, 10, 3]                     # List<int> - List of layers the dream should loop through.
+iterations = 1                          # int - Number of optimization iterations.
+stepSize = 0.5                          # double (/float!?) - Scale for each step of gradient descent.
+rescaleFactor = 0.6                     # double - Downscaling factor for the image.
+repeats = 5                             # int - Number of image downscales.
+blend = 0.2                             # double - Factor for blending the original and processed images.
 
-### Create a dream image.
+"""
+### Create a dream image. ###
 # Settings
-pictureName = "IMG-20170212-WA0010.jpg"
-pictureInputDirectory = "Application/PicturesInput/"
-pictureOutputDirectory = "Application/PicturesOutput/"
+pictureName = "IMG-20170212-WA0010.jpg"                 # string - File name of the input image.
+pictureInputDirectory = "Application/PicturesInput/"    # string - Relative path to the input folder.
+pictureOutputDirectory = "Application/PicturesOutput/"  # string - Relative path to the output folder.
 
-#DreamImage.DreamImage(pictureInputDirectory, layers, iterations, stepSize, rescaleFactor, 
-#                      repeats, blend, pictureName, pictureOutputDirectory)
+DreamImage.DreamImage(pictureInputDirectory, layers, iterations, stepSize, rescaleFactor, 
+                      repeats, blend, pictureName, pictureOutputDirectory)
+"""
 
-
-### Create a dream video.
+### Create a dream video. ###
 # Settings
-fps = 20
-dreamImage1 = "Squirel1920x1080"
-dreamImage2 = "LightTree1920x1080"
-changeLayerAfterSec = 5
-dreamLength = len(layers) * changeLayerAfterSec
-trimPercent = 0.25
-blendDirectory = "Application/Blend/"
-blendLength = 3
-videoOutputDirectory = "Application/Videos/"
-picturesFolder = ""
+fps = 20                                        # int - Frames per second of the video [images/s].
+dreamImage1 = "Squirel1920x1080"                # string - Folder name for the dream images.
+dreamImage2 = "LightTree1920x1080"              # string - Folder name for the dream images.
+changeLayerAfterSec = 5                         # int - Time befor switching to the next layer [s].
+dreamLength = len(layers) * changeLayerAfterSec # int - Duration of the dream [s].
+trimPercent = 0.25                              # double - Factor to trim the image [%].
+blendDirectory = "Application/Blend/"           # string - Relative path to the blend folder. 
+blendLength = 3                                 # int - Duration of the blend effect inbetween two dreams [s].
+videoOutputDirectory = "Application/Videos/"    # string - Relative path to the video folder.
 
 DreamFrames.DreamFrames(dreamDirectory, layers, iterations, stepSize, rescaleFactor, repeats, 
                         blend, fps, dreamImage1, dreamLength, changeLayerAfterSec, trimPercent)
@@ -60,4 +60,4 @@ BlendDreams.BlendDreams(blendDirectory, fps, dreamLength, dreamImage1, dreamImag
 CreateVideo.CreateVideo(videoOutputDirectory, fps, dreamImage1, dreamImage2, 
                         dreamDirectory, blendDirectory)
 
-print("=)")
+print("Finished successfully =)")
