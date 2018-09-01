@@ -20,8 +20,9 @@ def CreateVideo(fileDirectory, fps, nameDream1, nameDream2, dreamsDirectory, ble
     # Add images of first dream to video.
     while os.path.isfile("{}{}/img_{}.jpg".format(dreamsDirectory, nameDream1, processedFrame)):
         print("{}{}/img_{}.jpg".format(dreamsDirectory, nameDream1, processedFrame))
+        # Show initial image for 2 seconds.
         if "img_0.jpg" in "{}{}/img_{}.jpg".format(dreamsDirectory, nameDream1, processedFrame):
-            for i in range(0, fps):
+            for i in range(0, 2 * fps):
                 output.write(cv2.imread("{}{}/img_{}.jpg".format(dreamsDirectory, nameDream1, processedFrame)))
         output.write(cv2.imread("{}{}/img_{}.jpg".format(dreamsDirectory, nameDream1, processedFrame)))
         processedFrame += 1
@@ -36,8 +37,9 @@ def CreateVideo(fileDirectory, fps, nameDream1, nameDream2, dreamsDirectory, ble
     # Add images of seconf dream to video.
     while os.path.isfile("{}{}/img_{}.jpg".format(dreamsDirectory, nameDream2, processedFrame - 1)):
         print("{}{}/img_{}.jpg".format(dreamsDirectory, nameDream2, processedFrame - 1))
+        # Show last image for 2 seconds.
         if "img_0.jpg" in "{}{}/img_{}.jpg".format(dreamsDirectory, nameDream2, processedFrame - 1):
-            for i in range(0, fps):
+            for i in range(0, 2 * fps):
                 output.write(cv2.imread("{}{}/img_{}.jpg".format(dreamsDirectory, nameDream2, processedFrame - 1)))
         output.write(cv2.imread("{}{}/img_{}.jpg".format(dreamsDirectory, nameDream2, processedFrame - 1)))
         processedFrame -= 1

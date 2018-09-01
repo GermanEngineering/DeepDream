@@ -23,7 +23,7 @@ import CreateVideo
 dreamDirectory = "Application/Dreams/"
 layers = [6, 10, 3]
 iterations = 1
-stepSize = 1
+stepSize = 0.5
 rescaleFactor = 0.6
 repeats = 5
 blend = 0.2
@@ -41,23 +41,23 @@ pictureOutputDirectory = "Application/PicturesOutput/"
 ### Create a dream video.
 # Settings
 fps = 20
-dreamImage1 = "Baumstaemme1920x1080"
-dreamImage2 = "GreenTree1920x1080"
-changeLayerAfterSec = 1
+dreamImage1 = "Squirel1920x1080"
+dreamImage2 = "LightTree1920x1080"
+changeLayerAfterSec = 5
 dreamLength = len(layers) * changeLayerAfterSec
-trimPercent = 0.3
+trimPercent = 0.25
 blendDirectory = "Application/Blend/"
-blendLength = 2
+blendLength = 3
 videoOutputDirectory = "Application/Videos/"
 picturesFolder = ""
 
-#DreamFrames.DreamFrames(dreamDirectory, layers, iterations, stepSize, rescaleFactor, repeats, 
-#                        blend, fps, dreamImage1, dreamLength, changeLayerAfterSec, trimPercent)
-#DreamFrames.DreamFrames(dreamDirectory, layers, iterations, stepSize, rescaleFactor, repeats, 
-#                        blend, fps, dreamImage2, dreamLength, changeLayerAfterSec, trimPercent)
+DreamFrames.DreamFrames(dreamDirectory, layers, iterations, stepSize, rescaleFactor, repeats, 
+                        blend, fps, dreamImage1, dreamLength, changeLayerAfterSec, trimPercent)
+DreamFrames.DreamFrames(dreamDirectory, layers, iterations, stepSize, rescaleFactor, repeats, 
+                        blend, fps, dreamImage2, dreamLength, changeLayerAfterSec, trimPercent)
 BlendDreams.BlendDreams(blendDirectory, fps, dreamLength, dreamImage1, dreamImage2, 
                       dreamDirectory, blendLength, trimPercent)
-#CreateVideo.CreateVideo(videoOutputDirectory, fps, dreamImage1, dreamImage2, 
-#                        dreamDirectory, blendDirectory)
+CreateVideo.CreateVideo(videoOutputDirectory, fps, dreamImage1, dreamImage2, 
+                        dreamDirectory, blendDirectory)
 
 print("=)")

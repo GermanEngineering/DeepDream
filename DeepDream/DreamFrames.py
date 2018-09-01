@@ -16,8 +16,8 @@ def DreamFrames(fileDirectory, layers, iterations, stepSize, rescaleFactor, repe
         string fileDirectory - Relative path to the input file folder.
         List<int> layers - List of layers the dream should loop through.
         int iterations - Number of optimization iterations.
-        int stepSize - Scale for each step of gradient descent.
-        double (/float?) rescaleFactor - Downscaling factor for the image.
+        double (/float?) stepSize - Scale for each step of gradient descent.
+        double rescaleFactor - Downscaling factor for the image.
         int repeats - Number of image downscales.
         double blend - Factor for blending the original and processed images.
         int fps - Frames per second of the video [images/s].
