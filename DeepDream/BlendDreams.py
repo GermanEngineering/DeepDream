@@ -1,10 +1,9 @@
 import PIL.Image
 import os
 from shutil import copy2
-import math
 from scipy.misc import imresize
 from deepdreamer import load_image
-import numpy
+import numpy as np
 
 def BlendDreams(blendDirectory, fps, dreamLength, nameDream1, nameDream2, 
                dreamsDirectory, blendLength, trimPercent):
@@ -47,7 +46,7 @@ def BlendDreams(blendDirectory, fps, dreamLength, nameDream1, nameDream2,
         imageIntermediate = imresize(imageIntermediate, (ySize, xSize), "nearest")
 
         # Save the final image.
-        imageIntermediate = numpy.clip(imageIntermediate, 0.0, 255.0)
-        imageIntermediate = imageIntermediate.astype(numpy.uint8)
+        imageIntermediate = np.clip(imageIntermediate, 0.0, 255.0)
+        imageIntermediate = imageIntermediate.astype(np.uint8)
         result = PIL.Image.fromarray(imageIntermediate, mode="RGB")
         result.save("{}/img_{}.jpg".format(blendName, i + 1))
