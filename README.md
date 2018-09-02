@@ -2,9 +2,10 @@
 In this video I'm going to show you how you can create a deep dream video using your own images.
 
 Prerequisites:
-	Python 3.6.6
-	Git
-
+	Python 3.6.6 from https://www.python.org/downloads/release/python-366/
+	Git from https://git-scm.com/downloads
+	Microsoft Visual C++ 2015 Redistributable Update 3 from https://www.microsoft.com/en-us/download/details.aspx?id=53587
+	
 1) Clone GermanEngineering/DeepDream Git repository.
 	Open command prompt
 		WINDOWS cmd ENTER
@@ -28,5 +29,14 @@ Prerequisites:
 	You can check all installed modules by executing:
 		pip list
 
-3)  
+3) Select and paste images
+		
+		
+3) Configure the settings for your custom dream.
+	Open the DeepDream.py file to change settings like the used images, layers, fps, ...
+	
+4)
+
+
+
 

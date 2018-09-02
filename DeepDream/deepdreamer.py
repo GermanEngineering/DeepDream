@@ -20,7 +20,7 @@ import PIL.Image
 from scipy.ndimage.filters import gaussian_filter
 import inception5h
 
-
+inception5h.maybe_download()
 model = inception5h.Inception5h()
 gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.5)
 session = tf.Session(graph=model.graph,

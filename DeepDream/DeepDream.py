@@ -42,8 +42,8 @@ DreamImage.DreamImage(pictureInputDirectory, layers, iterations, stepSize, resca
 ### Create a dream video. ###
 # Settings
 fps = 30                                        # int - Frames per second of the video [images/s].
-dream1Folder = "Squirel1920x1080"                # string - Folder name for the dream images.
-dream2Folder = "LightTree1920x1080"              # string - Folder name for the dream images.
+dream1Folder = "Dream1Folder"                   # string - Folder name for the dream images.
+dream2Folder = "Dream2Folder"                   # string - Folder name for the dream images.
 changeLayerAfterSec = 3                         # int - Time before switching to the next layer [s].
 dreamLength = len(layers) * changeLayerAfterSec # int - Duration of the dream [s].
 trimPercent = 0.25                              # double - Factor to trim the image [%].
