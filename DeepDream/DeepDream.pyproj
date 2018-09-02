@@ -25,7 +25,6 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="AlgorithmParameters.xlsx" />
     <Content Include="Application\Dreams\AlinaSki1\img_0.jpg" />
     <Content Include="Application\Dreams\AlinaSki1\img_1.jpg" />
     <Content Include="Application\Dreams\AlinaSki1\img_10.jpg" />

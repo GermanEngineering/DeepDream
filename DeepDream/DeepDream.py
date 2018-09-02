@@ -44,11 +44,11 @@ DreamImage.DreamImage(pictureInputDirectory, layers, iterations, stepSize, resca
 fps = 30                                        # int - Frames per second of the video [images/s].
 dream1Folder = "Squirel1920x1080"                # string - Folder name for the dream images.
 dream2Folder = "LightTree1920x1080"              # string - Folder name for the dream images.
-changeLayerAfterSec = 3                         # int - Time befor switching to the next layer [s].
+changeLayerAfterSec = 3                         # int - Time before switching to the next layer [s].
 dreamLength = len(layers) * changeLayerAfterSec # int - Duration of the dream [s].
 trimPercent = 0.25                              # double - Factor to trim the image [%].
 blendDirectory = "BlendImages/"                 # string - Relative path to the blend folder. 
-blendLength = 3                                 # int - Duration of the blend effect inbetween two dreams [s].
+blendLength = 3                                 # int - Duration of the blend effect in between two dreams [s].
 videoOutputDirectory = "FinalVideos/"           # string - Relative path to the video folder.
 
 DreamFrames.DreamFrames(dreamDirectory, layers, iterations, stepSize, rescaleFactor, repeats, 
