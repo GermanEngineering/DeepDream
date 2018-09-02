@@ -2,5 +2,5 @@ Pillow==5.2.0
 matplotlib==2.2.3
 numpy==1.13.3
 scipy==1.1.0
-tensorflow-gpu==1.10.0
 opencv-python==3.4.2.17
+tensorflow-gpu==1.10.0
