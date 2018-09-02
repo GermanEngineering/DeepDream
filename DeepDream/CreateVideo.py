@@ -43,8 +43,9 @@ def CreateVideo(fileDirectory, fps, nameDream1, nameDream2, dreamsDirectory, ble
         if "img_0.jpg" in "{}{}/img_{}.jpg".format(dreamsDirectory, nameDream2, processedFrame - 1):
             for i in range(0, 2 * fps):
                 output.write(cv2.imread("{}{}/img_{}.jpg".format(dreamsDirectory, nameDream2, processedFrame - 1)))
+        # Create video.
         output.write(cv2.imread("{}{}/img_{}.jpg".format(dreamsDirectory, nameDream2, processedFrame - 1)))
         processedFrame -= 1
 
-    # Create video.
+    # Close VideoWriter.
     output.release()
