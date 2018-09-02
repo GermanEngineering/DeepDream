@@ -1,4 +1,5 @@
 .vs
+*.sln
 /DeepDream/Application/
 /DeepDream/inception/
 /DeepDream/__pycache__/
