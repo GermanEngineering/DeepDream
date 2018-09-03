@@ -1,42 +1,45 @@
 # DeepDream
 Create a deep dream video using your own images.
 
+Credits and many thanks to:
+&nbsp;&nbsp;&nbsp;Magnus Pedersen - https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/14_DeepDream.ipynb
+&nbsp;&nbsp;&nbsp;Harrison Kinsley - https://pythonprogramming.net/deep-dream-python-playing-neural-network-tensorflow/
+
 Prerequisites:
-	Python 3.6.6 from https://www.python.org/downloads/release/python-366/
-	Git from https://git-scm.com/downloads
-	Microsoft Visual C++ 2015 Redistributable Update 3 from https://www.microsoft.com/en-us/download/details.aspx?id=53587
+&nbsp;&nbsp;&nbsp;Python 3.6.6 from https://www.python.org/downloads/release/python-366/
+&nbsp;&nbsp;&nbsp;Git from https://git-scm.com/downloads
+&nbsp;&nbsp;&nbsp;Microsoft Visual C++ 2015 Redistributable Update 3 from https://www.microsoft.com/en-us/download/details.aspx?id=53587
 	
 1)	Clone GermanEngineering/DeepDream Git repository.
-		Open command prompt
-			WINDOWS cmd ENTER
-		Create new directory for Git projects.
-			mkdir GitProjects
-		Navigate to created folder.
-			cd GitProjects
-		Clone repository.
-			git clone https://github.com/GermanEngineering/DeepDream.git
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Open command prompt
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WINDOWS cmd ENTER
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create new directory for Git projects.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mkdir GitProjects
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Navigate to created folder.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cd GitProjectscd DeepDream
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clone repository.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git clone https://github.com/GermanEngineering/DeepDream.git
 
 2)	Install dependencies
-		Navigate to folder containing the requirement files.
-			cd DeepDream/DeepDream
-		List all files.
-			dir
-		If you have a GPU (or can afford to buy one) you should execute:
-		(It's WAY FASTER(!) =)
-			pip install -r requirementsGPU.txt
-		If you need to run on CPU execute:
-			pip install -r requirements.txt
-		You can check all installed modules by executing:
-			pip list
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Navigate to folder containing the requirement files.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cd DeepDream/DeepDream
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List all files.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dir
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you have a GPU you should execute:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pip install -r requirementsGPU.txt
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you need to run on CPU execute:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pip install -r requirements.txt
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can check all installed modules by executing:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pip list
 
 3)	Select your start and end image.
-		Create new folders in the DeepDream/DreamImages directory for the start as well as the end image.
-		Copy your images in the respective folder and rename them to "img_0.jpg"		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create new folders in the DeepDream/DreamImages directory for the start as well as the end image.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copy your images in the respective folder and rename them to "img_0.jpg"		
 		
 3)	Configure the settings for your custom dream.
-		Open the DeepDream.py file in a text editor.
-		Change the dream1Folder and dream2Folder strings to the name of the folders you just created.
-		Adapt other settings like the used layers, dream duration, fps, ... to your preferences (or leave them at default in case you're not sure)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Open the DeepDream.py file in a text editor.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Change the dream1Folder and dream2Folder strings to the name of the folders you just created.
+&nbsp;&nbsp;&nbsp;Adapt other settings like the used layers, dream duration, fps, ... to your preferences (or leave them at default in case you're not sure)
 	
 4)	Run the script by executing:
-	DeepDream.py
+&nbsp;&nbsp;&nbsp;DeepDream.py
